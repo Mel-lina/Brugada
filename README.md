@@ -22,3 +22,11 @@ NOTE: For ancestry admixture analysis of Brugada syndrome and Wellderly subjects
 * First, execute ```MinION_alignment_and_filtering.pl``` for alignment and filtering of long-read sequencing data (generated on the MinION device).
 * Second, execute ```whatshap_phase.pl``` for haplotype phasing of long reads.
 * Finally, execute ```whatshap_haplotag.pl``` to tag phased haplotypes for visualization on IGV.
+
+### Logistic regression analysis
+NOTE: To test for a recessive, dominant or multiplicative inheritance model, you only need to change genotype codification (as explained below). The R script is the same independently of the model tested.
+* For the recessive model: genotypes must be coded as 0 or 1 (ex: no test hapallele or heterozygous = 0, and homozygous for test allele = 1).
+* For the dominant model: genotypes must be coded as 0 or 1 (ex: no test allele = 0, and heterozygous or homozygous for test allele = 1).
+* For the multiplicative model: genotypes must be coded as 0, 1, or 2 (ex: no test allele = 0, heterozygous = 1, homozygous for test allele = 2).
+
+For haplotypes execute ```logistic_regresion_Haps.R```, for SNVs execute ```logistic_regresion_SNVs.R```.
